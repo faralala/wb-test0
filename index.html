@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Товары и точка</title>
+	<link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+	<!--HEADER-->
+	<header class="header">
+		<div class="header__container">
+			<div class="header__navi">
+				<div class="header__burger">
+					<img src="img/svg/menu.svg" alt="menu">
+				</div>
+				<div class="header__logo">
+					<img src="img/svg/header-logo.svg" alt="header-logo">
+				</div>
+			</div>
+			<div class="header__search">
+				<input class="header__search-input" type="text" placeholder="Я ищу..." />
+				<button class="header__search-button">
+					<img src="img/svg/search-button.svg" alt="">
+				</button>
+				<div class="header__navbar">
+					<div class="header__navbar-button">
+						<img src="img/svg/header-profile.svg" alt="header-profile">
+						<span class="header__navbar-button-text">Профиль</span>
+					</div>
+					<div class="header__navbar-button">
+						<img src="img/svg/header-cart.svg" alt="header-cart">
+						<span class="header__navbar-button-text">Корзина</span>
+						<span class="cart-count">3</span>
+					</div>
+				</div>
+			</div>
+			<div class="header__navbar-mobile">
+				<div class="header__burger"></div>
+				<div class="mobile-logo">
+					<img src="img/svg/mobile-logo.svg" alt="mobile-logo">
+				</div>
+				<button class="header__search-button">
+					<img src="img/svg/Search.svg" alt="search-button">
+				</button>
+			</div>
+		</div>
+	</header>
+	<!--MAIN-->
+	<main class="main">
+		<div class="main__container">
+			<!--CART-PAGE-->
+			<div class="cart-page">
+				<div class="cart-page__wrapper">
+					<div class="cart-sections">
+						<div class="cart-sections__content">
+							<h1 class="cart-sections__header">Корзина</h1>
+							<div class="cart-sections__form">
+								<div class="cart-sections__available-items section-list">
+									<div class="section-list__handler">
+										<div class="section-list__handler-title">
+											<input class="cart-sections__checkbox checkbox-static checkbox"
+												onchange="updateItemCheckStatus(this.id)" id="0" type="checkbox" />
+											Выбрать все
+										</div>
+										<img src="img/svg/list-button.svg" alt="list-button" class='list-button'>
+									</div>
+									<span class="section-list-split"></span>
+									<div class="cart-sections__items-list">
+										<div class="cart-sections__item">
+											<div class="cart-sections__item-info">
+												<div class="cart-sections__image-wrapper">
+													<input class="cart-sections__checkbox" id="" type="checkbox" />
+													<div class="cart-sections__size-mobile">
+														<p class="cart__text-size">56</p>
+													</div>
+													<a class="cart-sections__image-link" href="#">
+														<img class="cart-sections__item-image" src="./img/tshirt.jpg"
+															alt="Футболка UZcotton мужская" />
+													</a>
+												</div>
+												<div class="cart-sections__item-text">
+													<div class="cart-sections__item-price-value-mobile">
+														<p class="cart-sections__price-new">522 <span
+																class="cart-sections__item-price-currency">сом</span>
+														</p>
+														<p class="cart-sections__price-old">1051 <span
+																class="cart-sections__item-price-currency cart-sections__price-old">сом</span></p>
+													</div>
+													<h2 class="cart-sections__item-header">Футболка UZcotton мужская</h2>
+													<div class="cart-sections__item-properties">
+														<span class="cart-sections__text">Цвет: белый</span>
+														<span class="cart-sections__text item__size">Размер: 56</span>
+													</div>
+													<div class="cart-sections__item-storage">
+														<span class="cart-sections__text">Коледино WB</span>
+														<div class="cart-sections__item-seller">
+															<span class="cart-sections__text">OOO Вайлдберриз</span>
+															<img src="img/svg/cart-info-icon.svg" alt="cart-info-icon"
+																class='cart-sections__info-icon'>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cart-sections__item-price">
+												<div class="cart-sections__item-price-buttons">
+													<div class="counter">
+														<div class="counter__wrapper">
+															<button class="counter__button">–</button>
+															<input class="counter__input" type="number" value="1" />
+															<button class="counter__button">+</button>
+														</div>
+													</div>
+													<label class="cart-sections__item-price-label" for="count">Осталось 2 шт.</label>
+													<div class="cart-sections__item-icons">
+														<img src="img/svg/cart-sections_item-like.svg" alt="cart-sections_item-like"
+															class='cart-like'>
+														<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del">
+													</div>
+												</div>
+												<div class="cart-sections__item-price-value">
+													<p class="cart-sections__price-new">522 <span
+															class="cart-sections__item-price-currency">сом</span>
+													</p>
+													<p class="cart-sections__price-old">1051 <span
+															class="cart-sections__item-price-currency cart-sections__price-old">сом</span></p>
+												</div>
+											</div>
+											<span class="section-list-split mobile-split"></span>
+										</div>
+
+										<div class="cart-sections__item">
+											<div class="cart-sections__item-info">
+												<div class="cart-sections__image-wrapper">
+													<input class="cart-sections__checkbox" id="" type="checkbox" />
+													<a class="cart-sections__image-link" href="#">
+														<img class="cart-sections__item-image" src="./img/case.jpg"
+															alt="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe" />
+													</a>
+												</div>
+
+												<div class="cart-sections__item-text">
+													<div class="cart-sections__item-price-value-mobile">
+														<p class="cart-sections__price-new">522 <span
+																class="cart-sections__item-price-currency">сом</span>
+														</p>
+														<p class="cart-sections__price-old">1051 <span
+																class="cart-sections__item-price-currency cart-sections__price-old">сом</span></p>
+													</div>
+													<h2 class="cart-sections__item-header">Силиконовый чехол картхолдер (отверстия) для карт,
+														прозрачный кейс бампер на Apple iPhone XR, MobiSafe</h2>
+													<div class="cart-sections__item-properties">
+														<span class="cart-sections__text">Цвет: прозрачный</span>
+													</div>
+													<div class="cart-sections__item-storage">
+														<span class="cart-sections__text">Коледино WB</span>
+														<div class="cart-sections__item-seller">
+															<span class="cart-sections__text">OOO Мегапрофстиль</span>
+															<img src="img/svg/cart-info-icon.svg" alt="cart-info-icon"
+																class='cart-sections__info-icon'>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cart-sections__item-price">
+												<div class="cart-sections__item-price-buttons">
+													<div class="counter">
+														<div class="counter__wrapper">
+															<button class="counter__button">–</button>
+															<input class="counter__input" type="number" class="" id="count" value="1" />
+															<button class="counter__button">+</button>
+														</div>
+													</div>
+													<div class="cart-sections__item-icons">
+														<img src="img/svg/cart-sections_item-like.svg" alt="cart-sections_item-like"
+															class='cart-like'>
+
+														<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del"
+															class='cart-delete'>
+													</div>
+												</div>
+												<div class="cart-sections__item-price-value">
+													<p class="cart-sections__price-new">522 <span
+															class="cart-sections__item-price-currency">сом</span>
+													</p>
+													<p class="cart-sections__price-old">1051 <span
+															class="cart-sections__item-price-currency cart-sections__price-old">сом</span></p>
+												</div>
+											</div>
+											<span class="section-list-split mobile-split"></span>
+										</div>
+
+										<div class="cart-sections__item">
+											<div class="cart-sections__item-info">
+												<div class="cart-sections__image-wrapper">
+													<input class="cart-sections__checkbox" id="" type="checkbox" />
+													<a class="cart-sections__image-link" href="#">
+														<img class="cart-sections__item-image" src="./img/pencils.jpg"
+															alt="Карандаши цветные Faber-Castell Замок, набор 24 цвета, заточенные, шестигранные, Faber-Castell" />
+													</a>
+												</div>
+
+												<div class="cart-sections__item-text">
+													<div class="cart-sections__item-price-value-mobile">
+														<p class="cart-sections__price-new">522 <span
+																class="cart-sections__item-price-currency">сом</span>
+														</p>
+														<p class="cart-sections__price-old">1051 <span
+																class="cart-sections__item-price-currency cart-sections__price-old">сом</span></p>
+													</div>
+													<h2 class="cart-sections__item-header">Карандаши цветные Faber-Castell "Замок", набор 24
+														цвета,
+														заточенные, шестигранные, <br> Faber-Castell</h2>
+													<div class="cart-sections__item-storage">
+														<span class="cart-sections__text">Коледино WB</span>
+														<div class="cart-sections__item-seller">
+															<span class="cart-sections__text">OOO Вайлдберриз</span>
+															<img src="img/svg/cart-info-icon.svg" alt="cart-info-icon"
+																class='cart-sections__info-icon'>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cart-sections__item-price">
+												<div class="cart-sections__item-price-buttons">
+													<div class="counter">
+														<div class="counter__wrapper">
+															<button class="counter__button">–</button>
+															<input class="counter__input" type="number" class="" value="1" />
+															<button class="counter__button">+</button>
+														</div>
+													</div>
+													<label class="cart-sections__item-price-label" for="count">Осталось 2 шт.</label>
+													<div class="cart-sections__item-icons">
+														<img src="img/svg/cart-sections_item-like.svg" alt="cart-sections_item-like"
+															class='cart-like'>
+
+														<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del"
+															class='cart-delete'>
+													</div>
+												</div>
+												<div class="cart-sections__item-price-value">
+													<p class="cart-sections__price-new">522 <span
+															class="cart-sections__item-price-currency">сом</span>
+													</p>
+													<p class="cart-sections__price-old">1051 <span
+															class="cart-sections__item-price-currency cart-sections__price-old">сом</span></p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="cart-sections__unavailable-items section-list">
+									<div class="section-list__handler">
+										<span class="section-list__handler-title handler-title-bold">Отсутствуют · 3 товара</span>
+										<img src="img/svg/list-button.svg" alt="list-button" class="list-button" id="list-button">
+									</div>
+									<span class="section-list-split"></span>
+									<div class="cart-sections__items-list items-unavailable">
+										<div class="cart-sections__item">
+											<div class="cart-sections__item-info cart-page__item-info--disabled">
+												<div class="cart-sections__image-wrapper">
+													<a class="cart-sections__image-link" href="#">
+														<img class="cart-sections__item-image cart-page__item-image--disabled"
+															src="./img/tshirt.jpg" alt="Футболка UZcotton мужская" />
+													</a>
+												</div>
+
+												<div class="cart-sections__item-text">
+													<h2 class="cart-sections__item-header">Футболка UZcotton мужская</h2>
+													<div class="cart-sections__item-properties">
+														<span class="cart-sections__text">Цвет: белый</span>
+														<span class="cart-sections__text item__size">Размер: 56</span>
+													</div>
+												</div>
+											</div>
+											<div class="cart-sections__item-price">
+												<div class="cart-sections__item-price-buttons buttons-unavailable">
+													<div class="cart-sections__item-icons">
+														<img src="img/svg/cart-sections_item-like.svg" alt="cart-sections_item-like"
+															class='cart-like'>
+
+														<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del"
+															class='cart-delete'>
+													</div>
+												</div>
+												<div class="cart-sections__item-price-value">
+												</div>
+											</div>
+										</div>
+										<div class="cart-sections__item">
+											<span class="section-list-split mobile-split"></span>
+											<div class="cart-sections__item-info cart-page__item-info--disabled">
+												<div class="cart-sections__image-wrapper">
+													<a class="cart-sections__image-link" href="#">
+														<img class="cart-sections__item-image cart-page__item-image--disabled" src="./img/case.jpg"
+															alt="Футболка UZcotton мужская" />
+													</a>
+												</div>
+
+												<div class="cart-sections__item-text">
+													<h2 class="cart-sections__item-header">Силиконовый чехол картхолдер (отверстия) для карт,
+														прозрачный кейс бампер на Apple iPhone XR, MobiSafe</h2>
+													<div class="cart-sections__item-properties">
+														<span class="cart-sections__text">Цвет: прозрачный</span>
+													</div>
+												</div>
+											</div>
+											<div class="cart-sections__item-price">
+												<div class="cart-sections__item-price-buttons">
+													<div class="cart-sections__item-icons">
+														<img src="img/svg/cart-sections_item-like.svg" alt="cart-sections_item-like"
+															class='cart-like'>
+
+														<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del"
+															class='cart-delete'>
+													</div>
+												</div>
+												<div class="cart-sections__item-price-value">
+												</div>
+											</div>
+										</div>
+										<div class="cart-sections__item">
+											<span class="section-list-split mobile-split"></span>
+											<div class="cart-sections__item-info cart-page__item-info--disabled">
+												<div class="cart-sections__image-wrapper">
+													<a class="cart-sections__image-link" href="#">
+														<img class="cart-sections__item-image cart-page__item-image--disabled"
+															src="./img/pencils.jpg"
+															alt='Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell' />
+													</a>
+												</div>
+												<div class="cart-sections__item-text">
+													<h2 class="cart-sections__item-header">Карандаши цветные Faber-Castell "Замок", набор 24
+														цвета,
+														заточенные, шестигранные, Faber-Castell</h2>
+													<div class="cart-sections__item-properties">
+													</div>
+												</div>
+											</div>
+											<div class="cart-sections__item-price">
+												<div class="cart-sections__item-price-buttons">
+													<div class="cart-sections__item-icons">
+														<img src="img/svg/cart-sections_item-like.svg" alt="cart-sections_item-like"
+															class='cart-like'>
+
+														<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del"
+															class='cart-delete'>
+													</div>
+												</div>
+												<div class="cart-sections__item-price-value">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cart-sections__user-form">
+									<div class="cart-sections__delivery section-round">
+										<div class="section-round__header-wrapper">
+											<h2 class="section-round__header">Способ доставки</h2>
+											<button class="section-round__header-button delivery-button-text">Изменить</button>
+										</div>
+										<div class="section-round__content">
+											<div class="cart-sections__delivery-details">
+												<div class="cart-sections__delivery-point">
+													<span class="cart-sections__delivery-details-header">
+														Пункт выдачи
+													</span>
+													<div class="cart-sections__delivery-point-info">
+														<span class="cart-sections__delivery-point-address">Бишкек, улица Ахматбека Суюмбаева,
+															12/1</span>
+														<div class="cart-sections__delivery-point-rating">
+															<span class="rating">
+																<img src="img/svg/rating.svg" alt="rating">
+																<span class="rating-value">4.99</span>
+															</span>
+															<span class="cart-sections__delivery-point-work-time">
+																Ежедневно с 10 до 21
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="cart-sections__delivery-price">
+													<span class="cart-sections__delivery-details-header">
+														Стоимость доставки
+													</span>
+													<div class="cart-sections__delivery-price-value">
+														Бесплатно
+													</div>
+												</div>
+
+												<div class="cart-sections__delivery-dates">
+													<div class="cart-sections__delivery-date">
+														<span class="cart-sections__delivery-details-header">
+															5—6 февраля
+														</span>
+														<div class="cart-sections__delivery-order-cards">
+															<a class="cart-sections__image-link delivery-image-link" href="#">
+																<img class="cart-sections__item-image" src="./img/tshirt.jpg"
+																	alt="Футболка UZcotton мужская" />
+															</a>
+															<a class="cart-sections__image-link delivery-image-link" href="#">
+																<img class="cart-sections__item-image" src="./img/case.jpg"
+																	alt="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe" />
+																<span class="item-counter">184</span>
+															</a>
+															<a class="cart-sections__image-link delivery-image-link" href="#">
+																<img class="cart-sections__item-image" src="./img/pencils.jpg"
+																	alt='Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell' />
+																<span class="item-counter">2</span>
+															</a>
+														</div>
+													</div>
+													<div class="cart-sections__delivery-date">
+														<span class="cart-sections__delivery-details-header">
+															7—8 февраля
+														</span>
+														<div class="cart-sections__delivery-order-cards">
+															<a class="cart-sections__image-link delivery-image-link" href="#">
+																<img class="cart-sections__item-image" src="./img/case.jpg"
+																	alt="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe" />
+																<span class="item-counter">16</span>
+															</a>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="cart-sections__delivery-refund-info">
+												<img src="img/svg/cart-sections-refund-info.svg" alt="refund-info">
+
+												<p class="cart-sections__delivery-refund-info__text">
+													Обратная доставка товаров на склад при отказе — <span class="highlight"
+														id="form-payment-tooltip-trigger">бесплатно</span>
+												</p>
+												<span class="cart-sections__tooltip-payment" id="form-payment-tooltip">Если товары вам не
+													подойдут,
+													мы вернем их обратно на склад — это бесплатно</span>
+											</div>
+										</div>
+									</div>
+									<div class="cart-sections__payment section-round">
+										<div class="section-round__header-wrapper">
+											<h2 class="section-round__header">Способ оплаты</h2>
+											<button class="section-round__header-button payment-button-text">Изменить</button>
+										</div>
+										<div class="section-round__content">
+											<div class="cart-sections__payment-list">
+												<div class="cart-sections__payment-method">
+													<img src="img/svg/mir.svg" alt="mir">
+													<span class="card-info">
+														<span class="card-number">1234 56•• •••• 1234</span>
+														<span class="card-expires-date">01/30</span>
+													</span>
+												</div>
+												<p class="payment-notification-text">Спишем оплату с карты при получении</p>
+											</div>
+
+										</div>
+									</div>
+									<div class="cart-sections__user-info section-round">
+										<div class="section-round__header-wrapper">
+											<h2 class="section-round__header">Получатель</h2>
+										</div>
+
+										<div class="section-round__content">
+											<form class="cart-sections__user-info-container" method="post" id="user-form">
+												<div class="cart-sections__user-info-input-wrapper">
+													<div class="cart-sections__user-info-input-container">
+														<label class="cart-sections__user-info-label" for="name">&nbsp</label>
+														<input class="cart-sections__user-info-input" type="text" id="name" placeholder="Имя">
+														<p class="cart-sections__user-info-input-text" id="name-label"> </p>
+													</div>
+													<div class="cart-sections__user-info-input-container">
+														<label class="cart-sections__user-info-label" for="name">&nbsp</label>
+														<input class="cart-sections__user-info-input" type="text" id="surname"
+															placeholder="Фамилия">
+														<p class="cart-sections__user-info-input-text" id="surname-label"> </p>
+													</div>
+												</div>
+
+												<div class="cart-sections__user-info-input-wrapper">
+													<div class="cart-sections__user-info-input-container error">
+														<label class="cart-sections__user-info-label" for="name">&nbsp</label>
+														<input class="cart-sections__user-info-input" type="text" id="email"
+															placeholder="Электронная почта">
+														<p class="cart-sections__user-info-input-text" id="email-label"> </p>
+													</div>
+													<div class="cart-sections__user-info-input-container">
+														<label class="cart-sections__user-info-label" for="name">&nbsp</label>
+														<input class="cart-sections__user-info-input" type="phone" id="phone" placeholder="Телефон">
+														<p class="cart-sections__user-info-input-text" id="phone-label"> </p>
+													</div>
+													<div class="cart-sections__user-info-input-container">
+														<label class="cart-sections__user-info-label" for="name">&nbsp</label>
+														<input class="cart-sections__user-info-input" type="text" id="inn" placeholder="ИНН">
+														<p class="cart-sections__user-info-input-text" id="inn-label">Для таможенного оформления</p>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--сheckout-->
+						<div class="checkout section-round">
+							<div class="checkout__total">
+								<div class="checkout__total-sum">
+									<div class="checkout__header">
+										<h2 class="section-round__header">Итого</h2>
+										<h2 class="section-round__header">
+											<span id="total-sum">2 101 063</span>
+											<span class="cart-page__checkout-currency">&nbspсом</span>
+										</h2>
+									</div>
+									<div class="checkout__total-text-container">
+										<p class="checkout__total-text" id="checkout-counter">4 товара</p>
+										<p class="checkout__total-text" id="oldprice-sum">2 302 048 сом</p>
+									</div>
+
+									<div class="checkout__total-text-container">
+										<p class="checkout__total-text">Скидка</p>
+										<p class="checkout__total-text" id="total-discount">−200 985 сом</p>
+									</div>
+									<div class="checkout__total-text-container">
+										<p class="checkout__total-text">Доставка</p>
+										<p class="checkout__total-text">Бесплатно</p>
+									</div>
+								</div>
+
+								<div class="checkout__container">
+									<div class="checkout__delivery-info">
+										<div class="checkout__header-wrapper">
+											<h4 class="checkout__subtitle">Доставка в пункт выдачи</h4>
+											<button class="checkout__header-button delivery-button"></button>
+										</div>
+										<div class="delivery__address">
+											<p class="checkout__text">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+											<p class="checkout__text highlight-purple">5–8 фев</p>
+										</div>
+
+									</div>
+
+									<div class="checkout__refund">
+										<img src="img/svg/cart-sections-refund-info.svg" alt="refund-info" class="refund_icon">
+										<div class="checkout__refund-text">
+											<p class="checkout__text">Обратная доставка товаров на склад при отказе — <span class="highlight"
+													id="checkout__tooltip-payment-trigger">бесплатно</span></p>
+										</div>
+										<div class="checkout__tooltip-payment" id="checkout-payment-tooltip">Если товары вам не подойдут, мы
+											вернем их обратно на склад — это бесплатно</div>
+									</div>
+								</div>
+								<div class="checkout__container">
+									<div class="checkout__payment">
+										<div class="checkout__header-wrapper">
+											<h4 class="checkout__subtitle">Оплата картой</h4>
+											<button class="checkout__header-button payment-button"></button>
+										</div>
+
+										<div class="checkout__payment-method">
+											<img src="img/svg/mir.svg" alt="mir">
+											<span class="checkout__card-number">1234 12•• •••• 1234</span>
+										</div>
+
+										<div class="checkout__payment-agreement">
+											<div class="checkout__payment-agreement-checkbox-wrapper">
+												<input class="cart-sections__checkbox checkbox-static agreement-checkbox" id=""
+													type="checkbox" />
+												<p class="checkout__text">Списать оплату сразу</p>
+											</div>
+
+											<p class="checkout__text">Спишем оплату с карты при получении</p>
+
+										</div>
+									</div>
+								</div>
+								<div class="checkout__order-confirm">
+									<button class="checkout__order-button" type="submit" form="user-form">Заказать</button>
+									<div class="checkout__order-agreement">
+										<img src="img/svg/order-agree.svg" alt="order-agree">
+										<p class="checkout__text">Соглашаюсь с <span class="highlight-gray">правилами пользования торговой
+												площадкой</span> и <span class="highlight-gray">возврата</span> </p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="footer__copyright"></div>
+		<p class="footer__text">© 2022 ООО «Товары и точка»</p>
+	</footer>
+	<!--FOOTER-MENU-MOBILE-->
+	<div class="menu__mobile">
+		<button class="menu__mobile-button menu__mobile-button-home"></button>
+		<button class="menu__mobile-button menu__mobile-button-catalog"></button>
+		<div class="menu__mobile-button-cart-button-wrapper">
+			<button class="menu__mobile-button menu__mobile-button-cart"></button>
+			<span class="cart-count mobile-count">3</span>
+		</div>
+		<button class="menu__mobile-button menu__mobile-button-like"></button>
+		<button class="menu__mobile-button menu__mobile-button-profile"></button>
+	</div>
+	<!--MODAL-PAYMENT-->
+	<div class="modal-payment">
+		<form class='modal-payment__container'>
+			<div class="div">
+				<div class="modal-close-wrapper">
+					<h3 class="modal__title">Способ оплаты</h3>
+					<button class='modal__close-button' type='button' id="closePayment"></button>
+				</div>
+				<div class="modal__payment-wrapper">
+					<div class="modal__payment-item">
+						<input type="radio" class="modal__input" name='payment' id="payment-item-1" checked>
+						<img src="img/svg/mir.svg" class="modal__img" alt="mir">
+						<label class="modal__text" for="payment-item-2">1234 56•• •••• 1234</label>
+					</div>
+					<div class="modal__payment-item">
+						<input type="radio" class="modal__input" name='payment' id="payment-item-2">
+						<img src="img/svg/visa.svg" class="modal__img" alt="visa">
+						<label class="modal__text" for="payment-item-2">1234 56•• •••• 1234</label>
+					</div>
+					<div class="modal__payment-item">
+						<input type="radio" class="modal__input" name='payment' id="payment-item-3">
+						<img src="img/svg/mastercard.svg" class="modal__img" alt="mastercard">
+						<label class="modal__text" for="payment-item-3">1234 56•• •••• 1234</label>
+					</div>
+					<div class="modal__payment-item">
+						<input type="radio" class="modal__input" name='payment' id="payment-item-4">
+						<img src="img/svg/maestro.svg" class="modal__img" alt="maestro">
+						<label class="modal__text" for="payment-item-4">1234 56•• •••• 1234</label>
+					</div>
+				</div>
+			</div>
+			<button class="modal__button" type="submit" id="payment-button">Выбрать</button>
+		</form>
+
+		<span class="modal-overlay"></span>
+	</div>
+	<!--MODAL-DELIVERY-->
+	<div class="modal-delivery">
+		<div class="modal-delivery__container">
+			<div class="modal-close-wrapper">
+				<h3 class="modal__title">Способ доставки</h3>
+				<button class='modal__close-button' type='button' id="closeDelivery"></button>
+			</div>
+			<div class="modal-delivery-category-buttons">
+				<button class="modal__category-button category-button-active" type="button" id="category-button-1">В пункт
+					выдачи</button>
+				<button class="modal__category-button" type="button" id="category-button-2">Курьером</button>
+			</div>
+			<div class="modal-delivery__addresses">
+				<h4 class="modal-delivery__header">Мои адреса</h4>
+				<div class="modal-delivery__address">
+					<div class="delivery-input-wrapper">
+						<input type="radio" name='delivery'>
+						<p class="delivery-input-text">Бишкек, улица Табышалиева, 57</p>
+					</div>
+					<img src="img/svg/cart-sections_item-del.svg" alt="cart-delete" class="cart-delete">
+				</div>
+				<div class="modal-delivery__address">
+					<div class="delivery-input-wrapper">
+						<input type="radio" name='delivery'>
+						<p>Бишкек, улица Жукеева-Пудовкина, 77/1</p>
+					</div>
+					<img src="img/svg/cart-sections_item-del.svg" alt="cart-delete" class="cart-delete">
+				</div>
+				<div class="modal-delivery__address">
+					<div class="delivery-input-wrapper">
+						<input type="radio" name='delivery'>
+						<p>Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</p>
+					</div>
+					<img src="img/svg/cart-sections_item-del.svg" alt="cart-delete" class="cart-delete">
+				</div>
+			</div>
+			<button class="modal__button" type="submit" id="delivery-button">Выбрать</button>
+		</div>
+		<span class="modal-overlay"></span>
+	</div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+
+</html>
