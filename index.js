@@ -49,6 +49,10 @@ let items = [
 		ogrn: 5167746237148,
 	},
 ]
+// Функция добавления пробела
+function formatNumberWithSpaces(number) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 // Функция подсчёта товаров в корзине
 const displayCheckout = items => {
 	const totalSum = document.querySelector('#total-sum')
@@ -69,9 +73,9 @@ const displayCheckout = items => {
 		}
 	})
 
-	totalSum.textContent = sum
-	totalDiscount.textContent = `–${discountSum} сом`
-	totalOldPrice.textContent = `${oldSum} сом`
+	totalSum.textContent = sum !== 0 ? formatNumberWithSpaces(sum) : '';
+  totalDiscount.textContent = discountSum !== 0 ? `–${formatNumberWithSpaces(discountSum)} сом` : '';
+  totalOldPrice.textContent = oldSum !== 0 ? `${formatNumberWithSpaces(oldSum)} сом` : '';
 
 	const counter = document.querySelector('#checkout-counter')
 	counter.textContent = `${count} ${getNoun(count, 'товар', 'товара', 'товаров')}`
@@ -177,9 +181,9 @@ const displayItem = items => {
 
             <div class="cart-sections__item-text">
               <div class="cart-sections__item-price-value-mobile">
-                <p class="cart-sections__price-new">${Math.round(
+                <p class="cart-sections__price-new">${formatNumberWithSpaces(Math.round(
 									item.price * item.discount * item.count
-								)}<span class="cart-sections__item-price-currency"> сом</span></p>
+								))}<span class="cart-sections__item-price-currency"> сом</span></p>
                 <p class="cart-sections__price-old">${
 									item.price * item.count
 								} <span class="cart-sections__item-price-currency cart-sections__price-old">сом</span></p>
@@ -298,9 +302,9 @@ const displayUnavailableItems = items => {
       </div>
       <div class="cart-sections__item-price">
         <div class="cart-sections__item-price-buttons buttons-unavailable">
-          <div class="cart-sections__item-icons" id="icons-${item.id}">
+          <div class="cart-sections__item-icons-una" id="icons-${item.id}">
 					<img src="img/svg/cart-sections_item-like.svg" alt="cart-sections_item-like" class="cart-like">
-					<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del">
+					<img src="img/svg/cart-sections_item-del.svg" alt="cart-sections_item-del" onclick="removeUnavailableItem(this.id)">
           </div>
         </div>
         <div class="cart-sections__item-price-value">
@@ -317,6 +321,17 @@ const displayUnavailableItems = items => {
 
 	iconsVisibility()
 	PriceHandler()
+}
+
+
+function removeUnavailableItem(buttonId) {
+	const itemId = buttonId.split('-')[1];
+	const itemToRemove = document.getElementById(`item-${itemId}`);
+	
+	if (itemToRemove) {
+			itemToRemove.remove();
+			
+	}
 }
 
 //Функция сворачивание объектов
@@ -477,12 +492,13 @@ function handleInputValidation(input) {
 			if (inputValue === '') {
 				clearError(input, label)
 				label.innerHTML = 'Для таможенного управления'
-			} else if (inputValue.length !== 14) {
-				setError(input, 'Проверьте ИНН', label)
-			} else {
+			} else if (/^[0-9]{14}$/.test(inputValue)) {
 				clearError(input, label)
 				label.style.color = 'black'
 				label.innerHTML = 'Для таможенного управления'
+				
+			} else {
+				setError(input, 'Проверьте ИНН', label)
 			}
 			break
 	}
@@ -632,6 +648,26 @@ function closeDeliveryModal() {
 		modal.style.display = 'none'
 	})
 }
+const categoryButton1 = document.querySelector('#category-button-1');
+const categoryButton2 = document.querySelector('#category-button-2');
+const addressesPickup = document.querySelector('.modal-delivery__addresses');
+const addressesCourier = document.querySelector('.modal-delivery__addresses-courier');
+
+
+function handleDeliveryButtonClick(event) {
+    if (event.target === categoryButton1) {
+        categoryButton1.classList.add('category-button-active');
+        categoryButton2.classList.remove('category-button-active');
+        addressesPickup.style.display = 'flex';
+        addressesCourier.style.display = 'none';
+    } else if (event.target === categoryButton2) {
+        categoryButton2.classList.add('category-button-active');
+        categoryButton1.classList.remove('category-button-active');
+        addressesPickup.style.display = 'none';
+        addressesCourier.style.display = 'flex'; 
+    }
+}
+document.querySelector('.modal-delivery-category-buttons').addEventListener('click', handleDeliveryButtonClick);
 //подсчёт товаров в корзине header
 function cartLabelCounter() {
 	const counter = document.querySelector('.cart-count')
