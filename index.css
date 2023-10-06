@@ -622,6 +622,11 @@ body {
 	gap: 16px;
 	justify-content: flex-end;
 }
+.cart-sections__item-icons-una {
+	display: flex;
+	gap: 16px;
+	justify-content: flex-end;
+}
 
 .cart-delete {
 	min-width: 20px;
@@ -638,6 +643,12 @@ body {
 
 @media (max-width: 800px) {
 	.cart-sections__item-icons {
+		display: flex;
+		position: absolute;
+		right: 12px;
+		gap: 24px;
+	}
+	.cart-sections__item-icons-una {
 		display: flex;
 		position: absolute;
 		right: 12px;
@@ -741,7 +752,8 @@ body {
 	outline: none;
 	width: 100%;
 	line-height: 24px;
-
+	font-size: 16px;
+  font-weight: 400;
 	text-align: center;
 }
 
@@ -810,7 +822,7 @@ input::-webkit-inner-spin-button {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	padding: 16px 24px 24px 24px;
+	padding: 12px 24px 24px 24px;
 	background-color: #ffffff;
 	border-radius: 16px;
 }
@@ -1411,7 +1423,7 @@ input::-webkit-inner-spin-button {
 	justify-content: space-between;
 	max-height: 30px;
 	width: 100%;
-	margin-bottom: 8px;
+	margin-bottom: 10px;
 }
 
 .checkout__total-text-container {
@@ -1470,7 +1482,7 @@ input::-webkit-inner-spin-button {
 	padding: 8px 8px 12px 8px;
 	background: #f6f6fa;
 	border-radius: 8px;
-	margin-top: 12px;
+	margin-top: 14px;
 }
 
 .refund_icon {
@@ -1495,7 +1507,7 @@ input::-webkit-inner-spin-button {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	padding: 8px 8px 12px 8px;
+	padding: 11px 8px 12px 8px;
 	background: #f6f6fa;
 	border-radius: 8px;
 	margin-top: 8px;
@@ -1526,6 +1538,7 @@ input::-webkit-inner-spin-button {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+	margin-top: -2px;
 }
 
 .checkout__order-agreement {
@@ -1533,6 +1546,7 @@ input::-webkit-inner-spin-button {
 	min-height: 24px;
 	display: flex;
 	gap: 8px;
+	margin-top: 3px;
 }
 
 .menu__mobile {
